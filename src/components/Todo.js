@@ -5,7 +5,7 @@ const Todo = props => {
         props.handleToggleChore(props.chores)
     };
 
-    return (<div onClick={handleClick} className='chore'>
+    return (<div onClick={handleClick} className={`${props.chores.completed ? 'completed' : ''}`}>
         <p>{props.chores.task}</p>
     </div>)
 };

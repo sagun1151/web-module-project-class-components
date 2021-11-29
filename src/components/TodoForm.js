@@ -15,9 +15,14 @@ class TodoForm extends React.Component {
             input: x.target.value
         });
     };
+
     handleClick = (x) => {
         x.preventDefault();
         this.props.handleAddChore(this.state.input);
+        this.setState({
+            ...this.state,
+            input:""
+        })        
     }
 
     render(){

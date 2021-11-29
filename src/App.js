@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import './style.css'
 
 const chores = [
   {
@@ -25,7 +26,8 @@ class App extends React.Component {
       chores:chores
     }
   }
-  handleToggle = () => {
+  handleToggle = (x) => {
+    x.preventDefault();
     this.setState({
       ...this.state,
       chores: this.state.chores.filter(chore => {
@@ -35,7 +37,6 @@ class App extends React.Component {
   }
 
   handleAddChore = (chore) => {
-    console.log('22', chore)
     const newChore = {
       task: chore,
       id: Date.now,
